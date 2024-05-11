@@ -25,9 +25,8 @@ int main(int argc, char *argv[])
 
     PyImport_AppendInittab("Playground", PyInit_Playground);
     Py_Initialize();
-    // PySys_GetObject("path")
     PyImport_ImportModule("Playground");
-    call_quack();
+    call_hello_world();
     Py_Finalize();
 
     return 0;
