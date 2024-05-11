@@ -39,3 +39,6 @@ build
 
 # Misc
 examples
+
+# Python
+__pycache__

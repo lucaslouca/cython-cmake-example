@@ -11,7 +11,7 @@ add_custom_command(
     DEPENDS ${PYTHON_APP_NAME}.pyx)
 
 set(SOURCES ${PYTHON_APP_NAME}.c)
-Python3_add_library(${PYTHON_APP_NAME} SHARED ${SOURCES})
+Python3_add_library(${PYTHON_APP_NAME} STATIC ${SOURCES})
 
 add_library(PythonFunctions ${PYTHON_APP_NAME}.c)
 

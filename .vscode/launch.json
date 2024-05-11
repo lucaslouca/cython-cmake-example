@@ -1,7 +1,4 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
         {
@@ -11,8 +8,8 @@
       "program": "${workspaceRoot}/build/src/myapp",
       "args": ["3"],
       "cwd": "${workspaceFolder}",
-      "preLaunchTask": "build",
-      "internalConsoleOptions": "openOnSessionStart"
+      "preLaunchTask": "build"
+      //,"internalConsoleOptions": "openOnSessionStart"
     }
   ]
 }

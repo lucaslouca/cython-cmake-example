@@ -7,29 +7,6 @@
 #include <Python.h>
 #include "Playground.h"
 
-// int main(int argc, char *argv[])
-// {
-
-//     if (argc < 2)
-//     {
-//         // report version
-//         std::cout << argv[0] << " Version " << Playground_VERSION_MAJOR << "."
-//                   << Playground_VERSION_MINOR << std::endl;
-//         std::cout << "Usage: " << argv[0] << " number" << std::endl;
-//         return 1;
-//     }
-
-//     // convert input to double
-//     const double inputValue = std::stod(argv[1]);
-
-//     const double outputValue = mathfunctions::sqrt(inputValue);
-
-//     std::cout << "The square root of " << inputValue << " is " << outputValue
-//               << std::endl;
-
-//     return 0;
-// }
-
 int main(int argc, char *argv[])
 {
 
@@ -48,6 +25,7 @@ int main(int argc, char *argv[])
 
     PyImport_AppendInittab("Playground", PyInit_Playground);
     Py_Initialize();
+    // PySys_GetObject("path")
     PyImport_ImportModule("Playground");
     call_quack();
     Py_Finalize();
