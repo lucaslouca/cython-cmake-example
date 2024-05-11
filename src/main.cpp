@@ -28,7 +28,29 @@ int main(int argc, char *argv[])
     PyImport_AppendInittab("Playground", PyInit_Playground);
     Py_Initialize();
     PyImport_ImportModule("Playground");
-    call_hello_world("Hello", std::vector<std::string>{"Joe"});
+
+    // PyObject *pMessage, *pNames, *presult;
+
+    // // https://docs.python.org/3/c-api/unicode.html#c.PyUnicode_FromString
+    // if (!(pMessage = PyUnicode_FromString("Hello ")))
+    // {
+    //     return 1;
+    // }
+
+    PyObject *pNames;
+    if (!(pNames = PyList_New(0)))
+    {
+        return 1;
+    }
+    for (int i = 1; i <= 3; i++)
+    {
+        std::string n = "Name_" + std::to_string(i);
+        PyList_Append(pNames, PyUnicode_FromString(n.c_str()));
+    }
+    // PyObject *pArgs[] = {pMessage, pNames};
+
+    char *pResult = call_hello_world("Hello", pNames);
+    std::cout << "Result from Python call: " << pResult << std::endl;
     Py_Finalize();
 
     return 0;
