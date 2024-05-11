@@ -6,5 +6,5 @@ sys.path.append(f"{dir_path}/PythonPlugins") # Update list of directories that t
 
 from hello import hello_world
 
-cdef public void call_hello_world(list names):
-    hello_world(names)
+cdef public string call_hello_world(string text, list names):
+    return hello_world(text, names)
